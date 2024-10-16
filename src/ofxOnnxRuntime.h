@@ -34,11 +34,13 @@ namespace ofxOnnxRuntime
 		Ort::Env ort_env;
 		std::shared_ptr<Ort::Session> ort_session;
 		std::vector<const char *> input_node_names;
+        std::vector<std::string> input_node_names_;
 		std::vector<int64_t> input_node_dims; // 1 input only.
 		std::size_t input_tensor_size = 1;
 		std::vector<float> input_values_handler;
 		Ort::MemoryInfo memory_info_handler = Ort::MemoryInfo::CreateCpu(OrtArenaAllocator, OrtMemTypeDefault);
 		std::vector<const char *> output_node_names;
+        std::vector<std::string> output_node_names_;
 		std::vector<std::vector<int64_t>> output_node_dims; // >=1 outputs
 		std::vector<Ort::Value> output_values;
 		Ort::Value dummy_tensor{ nullptr };

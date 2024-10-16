@@ -1,13 +1,16 @@
 # ofxOnnxRuntime
 [ONNX Runtime](https://github.com/microsoft/onnxruntime) tiny wrapper for openFrameworks
+Modified by [Ryo Hajika](https://github.com/ryohajika)
 
 !['test'](screenshot.png)
 
 ## Installation
+Go to [ONNX runtime release page](https://github.com/microsoft/onnxruntime/releases/tag/v1.19.2) to download precompiled library file and download under `libs` folder.
+(for macOS I bundled 1.19.2 universal lib so should be working on both Intel and Mx Macs)
+
 - macOS
-    - copy `libonnxruntime.1.10.0.dylib` to `/usr/local/lib` 
     - Generate a project using ProjectGenerator.
-- Windows
+- Windows (untested)
     - There are two ways to install ONNX Runtime on your project.
     1. Install using NuGet
         - I recommend this way in general.
@@ -21,11 +24,12 @@
         - Generate a project using ProjectGenerator, then all libs are linked correctly and all dlls are copied to `bin`.
 
 ## Tested environment
-- oF 0.11.2 + MacBookPro 2018 Intel + macOS Catalina
-- oF 0.11.2 + VS2017 + Windows 10 + RTX2080Ti + CUDA 11.4
+- oF 0.12.0 + Mac mini M2 + macOS Sonoma
 
 ## ToDo
-- check M1 Mac (should work), Linux CPU&GPU
+- Test for Mactel
+- Test for Windows
+- Implement the use of MPS on macOS
 
 ## Reference Implementation
 - I heavily referred [Lite.AI.ToolKit](https://github.com/DefTruth/lite.ai.toolkit) implementation.
